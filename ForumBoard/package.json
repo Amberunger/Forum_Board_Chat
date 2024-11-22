@@ -1,0 +1,17 @@
+{
+    "dependencies": {
+        "body-parser": "^1.20.3",
+        "crypto": "^1.0.1",
+        "ejs": "^3.1.10",
+        "express": "^4.21.1",
+        "express-session": "^1.18.1",
+        "i": "^0.3.7",
+        "jsonwebtoken": "^9.0.2",
+        "node": "^20.18.1",
+        "npm": "^10.9.0",
+        "sqlite3": "^5.1.7",
+        "uuid": "^11.0.2",
+        "uuidv4": "^6.2.13",
+        "ws": "^8.18.0"
+    }
+}

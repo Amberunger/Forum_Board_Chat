@@ -9,10 +9,14 @@
 <body>
     <div id="contentBox">
         <div id="textLog">
-            <!-- Messages will be displayed here -->
+            <% messages.forEach(message => { %>
+                <div>
+                    <strong><%= message.user %></strong> [<%= new Date(message.date).toLocaleString() %>]: <%= message.content %>
+                </div>
+            <% }) %>
         </div>
         <div id="inputBar">
-            <form action="/chat" method="post">
+            <form action="/chat/<%= forumName %>" method="post">
                 <input type="text" name="message" placeholder="Message">
                 <input type="submit" value="Send">
             </form>

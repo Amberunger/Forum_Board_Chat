@@ -99,7 +99,15 @@ app.get('/profile', isAuthenticated, (req, res) => {
 app.get('/chat/:forumName', isAuthenticated, (req, res) => {
     const forumName = req.params.forumName;
     console.log('chat page for forum:', forumName);
-    res.render('chat', { user: req.session.user, forumName: forumName });
+
+    db.all('SELECT user, content, date FROM messages WHERE forum = ? ORDER BY date ASC;', [forumName], (err, rows) => {
+        if (err) {
+            console.error(err);
+            res.send("There was an error:\n" + err);
+        } else {
+            res.render('chat', { user: req.session.user, forumName: forumName, messages: rows });
+        }
+    });
 });
 
 app.post('/forum', (req, res) => {
@@ -119,12 +127,16 @@ app.post('/forum', (req, res) => {
 });
 
 app.post('/chat/:forumName', (req, res) => {
+    const user = req.session.user;
+    const forumName = req.params.forumName;
+    const message = req.body.message;
+    const date = new Date().toISOString();
 
-    db.run('INSERT INTO messages (user, content, date) VALUES (?, ?, ?);', [user, forumName, date], (err) => {
+    db.run('INSERT INTO messages (user, forum, content, date) VALUES (?, ?, ?, ?);', [user, forumName, message, date], (err) => {
         if (err) {
             res.send('Database error:\n' + err);
         } else {
-            res.redirect('/forum');
+            res.redirect(`/chat/${forumName}`);
         }
     });
 });
