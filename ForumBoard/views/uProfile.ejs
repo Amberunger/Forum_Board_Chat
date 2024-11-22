@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile: <%- user %></title>
+    <style>
+        #header {
+            text-align: center;
+            border: 1px solid rgb(168, 115, 35);
+            padding: 10px;
+            color: rgb(245, 198, 193);
+            height: 10%;
+            background-color: rgb(226, 121, 79);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box">
+        <div id="header">
+            <h1>Hello, <%- user %></h1>
+        </div>
+        <div name="links">
+            <a href="/forum">Click here to go to the Forum Board</a>
+        </div>
+        <div name="pastPosts">
+            <h2>Past Posts</h2>
+            <% messages.forEach(message=> { %>
+                <div>
+                    <strong>Forum:</strong>
+                    <%= message.forum %> <br>
+                        <strong>Date:</strong>
+                        <%= new Date(message.date).toLocaleString() %> <br>
+                            <strong>Message:</strong>
+                            <%= message.content %>
+                </div>
+                <hr>
+                <% }) %>
+        </div>
+    </div>
+</body>
+
+</html>

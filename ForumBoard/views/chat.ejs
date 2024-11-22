@@ -11,7 +11,7 @@
         <div id="textLog">
             <% messages.forEach(message => { %>
                 <div>
-                    <strong><%= message.user %></strong> [<%= new Date(message.date).toLocaleString() %>]: <%= message.content %>
+                    <strong><a href="/user/<%= message.user %>"><%= message.user %></a></strong> [<%= new Date(message.date).toLocaleString() %>]: <%= message.content %>
                 </div>
             <% }) %>
         </div>

@@ -109,6 +109,18 @@ app.get('/chat/:forumName', isAuthenticated, (req, res) => {
         }
     });
 });
+app.get('/user/:username', isAuthenticated, (req, res) => {
+    const username = req.params.username;
+
+    db.all('SELECT forum, content, date FROM messages WHERE user = ? ORDER BY date ASC;', [username], (err, rows) => {
+        if (err) {
+            console.error(err);
+            res.send("There was an error:\n" + err);
+        } else {
+            res.render('uProfile', { user: username, messages: rows });
+        }
+    });
+});
 
 app.post('/forum', (req, res) => {
     console.log(req.body.forumName);
