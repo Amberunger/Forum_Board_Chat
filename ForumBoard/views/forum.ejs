@@ -11,15 +11,22 @@
     <div id="contentBox">
         <div id="leftSide">
             <div id="header">
-                <h1>Welcome to the Forum Boards <%- user %></h1>
+                <h1>Welcome to the Forum Boards <%= user %></h1>
             </div>
             <div id="forumList">
-                [Insert Forum List Here]
+                <% forums.forEach(forum => { %>
+                    <div>
+                        <a href="/chat/<%= forum.title %>"><%= forum.title %></a>
+                    </div>
+                <% }) %>
             </div>
         </div>
         <div id="rightSide">
             <div id="sidebar">
-                [Insert Sidebar Here]
+                <form action="/forum" method="post">
+                    <input type="text" name="forumName" placeholder="Forum Name">
+                    <input type="submit" value="Create Forum">
+                </form>
             </div>
         </div>
     </div>

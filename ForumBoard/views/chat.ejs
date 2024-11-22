@@ -3,9 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Insert Forum Name]</title>
+    <title>Forum: <%- forumName %></title>
 </head>
+
 <body>
-    
+    <div id="contentBox">
+        <div id="textLog">
+            <!-- Messages will be displayed here -->
+        </div>
+        <div id="inputBar">
+            <form action="/chat" method="post">
+                <input type="text" name="message" placeholder="Message">
+                <input type="submit" value="Send">
+            </form>
+        </div>
+    </div>
 </body>
 </html>
