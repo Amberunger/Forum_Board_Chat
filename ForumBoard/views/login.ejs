@@ -5,11 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login Page</title>
 </head>
+<link rel="stylesheet" href="/style.css">
+<style>
+    /* public/style.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+#box {
+    width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    text-align: center;
+}
+
+#header {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"], input[type="password"] {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+input[type="submit"] {
+    padding: 10px;
+    background-color: #e2794f;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #d0683c;
+}
+</style>
 <body>
-    <form action="/login" method="post">
-        <input name='user' type="text" placeholder="username">
-        <input name='pass' type="password" placeholder="password">
-        <input type="submit" value="Submit">
-    </form>
+    <div id="box">
+        <div id="header">
+            <h1>Login</h1>
+        </div>
+        <form action="/login" method="post">
+            <input name='user' type="text" placeholder="Username">
+            <input name='pass' type="password" placeholder="Password">
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 </body>
 </html>

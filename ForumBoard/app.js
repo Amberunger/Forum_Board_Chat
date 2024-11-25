@@ -91,7 +91,7 @@ app.post('/login', (req, res) => {
         res.send("You need a username and password");
     }
 });
-
+app.use(express.static('public'));
 app.get('/profile', isAuthenticated, (req, res) => {
     res.render('profile.ejs', { user: req.session.user });
 });

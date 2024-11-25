@@ -1,0 +1,99 @@
+/* styles.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+#box, #contentBox {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(155, 147, 147, 0.1);
+}
+
+#header {
+    text-align: center;
+    padding: 10px;
+    background-color: #e2794f;
+    color: #f5c6c1;
+    border-radius: 5px;
+}
+
+#header h1 {
+    margin: 0;
+}
+
+#inputBar {
+    margin-top: 20px;
+}
+
+#inputBar input[type="text"] {
+    width: 80%;
+    padding: 10px;
+    margin-right: 10px;
+}
+
+#inputBar input[type="submit"] {
+    padding: 10px 20px;
+    background-color: #e2794f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#inputBar input[type="submit"]:hover {
+    background-color: #d0683c;
+}
+
+#textLog div, .pastPost {
+    margin-bottom: 10px;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+#textLog div:last-child, .pastPost:last-child {
+    border-bottom: none;
+}
+
+a {
+    color: #e2794f;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+#links a {
+    display: block;
+    margin: 10px 0;
+}
+
+#forumList div {
+    margin-bottom: 10px;
+}
+
+#sidebar form {
+    display: flex;
+    flex-direction: column;
+}
+
+#sidebar input[type="text"] {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+#sidebar input[type="submit"] {
+    padding: 10px;
+    background-color: #e2794f;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+#sidebar input[type="submit"]:hover {
+    background-color: #d0683c;
+}
